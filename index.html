@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Riddim Yard, a monthly sound clash on Orange Street, Kingston</title>
+  <meta name="description" content="Riddim Yard is a monthly sound system clash and street dance on Orange Street in Downtown Kingston, Jamaica. Two sounds, four rounds, dub plates, a dance crew showcase, street food and a vinyl swap at the gate. The crowd decides.">
+  <meta name="theme-color" content="#EFE4C8">
+  <meta name="color-scheme" content="light">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Riddim Yard. Sound against sound on Orange Street">
+  <meta property="og:description" content="Last Saturday of every month, Downtown Kingston. Two sound systems clash, the crowd votes, the winner keeps the Yard Cup.">
+  <meta property="og:locale" content="en_JM">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1724858103797-6d388eb1006a?auto=format&amp;fit=crop&amp;w=1200&amp;h=630&amp;q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23FFC20E'/%3E%3Ccircle cx='32' cy='32' r='24' fill='%2316130F'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23FFC20E' stroke-width='1.5' opacity='.5'/%3E%3Ccircle cx='32' cy='32' r='9' fill='%23E5321C'/%3E%3Ccircle cx='32' cy='32' r='2' fill='%2316130F'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&amp;family=Bowlby+One&amp;family=Shrikhand&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15l13-7.5z" fill="currentColor"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24"><path d="M6 6h12v12H6z" fill="currentColor"/></symbol>
+  <symbol id="i-horn" viewBox="0 0 24 24"><path d="M3 9.5h3.5L19 4v16L6.5 14.5H3zM7.5 15.5l1.6 4.5h2.6l-1.5-3.7z" fill="currentColor"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l2.6 6.9 7.4.3-5.8 4.6 2 7.2L12 16.9 5.8 21l2-7.2L2 9.2l7.4-.3z" fill="currentColor"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 7l4.5 4L12 4l4.5 7L21 7l-2 12H5z" fill="currentColor"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M10.5 3h3v7.5H21v3h-7.5V21h-3v-7.5H3v-3h7.5z" fill="currentColor"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3 5h18v3H3zM3 10.5h18v3H3zM3 16h18v3H3z" fill="currentColor"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z" fill="currentColor"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="M12 3l10 5.5-10 5.5L2 8.5zM4.6 12.3L12 16.4l7.4-4.1 2.6 1.4-10 5.6-10-5.6z" fill="currentColor"/></symbol>
+</svg>
+
+<a class="skip" href="#main">Skip to the clash</a>
+
+<header class="top">
+  <a class="mark" href="#top" aria-label="Riddim Yard home">
+    <svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="18" fill="#16130F"/><circle cx="20" cy="20" r="6" fill="#E5321C"/><circle cx="20" cy="20" r="1.6" fill="#EFE4C8"/></svg>
+    <span>Riddim Yard</span>
+  </a>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav"><svg aria-hidden="true"><use href="#i-menu"/></svg><span>Menu</span></button>
+  <nav id="nav" class="nav" aria-label="Sections">
+    <a href="#clash">Tonight</a>
+    <a href="#rules">Rules</a>
+    <a href="#vote">Vote</a>
+    <a href="#night">The night</a>
+    <a href="#archive">Past clashes</a>
+    <a href="#swap">Vinyl swap</a>
+    <a href="#find">Find us</a>
+    <a href="#faq">Questions</a>
+  </nav>
+</header>
+
+<main id="main">
+
+<!-- HERO -->
+<section class="hero" id="top" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <p class="hero-when"><span class="paint paint-y">Sat 28 Nov</span> Orange Street, Downtown Kingston. Gate at 7pm, sounds till the sun come up.</p>
+    <h1 id="hero-title" class="sign" data-jitter>Riddim<br>Yard</h1>
+    <p class="hero-script">sound against sound</p>
+    <p class="hero-lede">Once a month we close a block of Orange Street, stack the boxes higher than the shop signs and let two sound systems war it out. <strong>The crowd is the judge.</strong></p>
+    <div class="hero-acts">
+      <a class="btn btn-ink" href="#vote">Vote for tonight</a>
+      <a class="txt-link" href="#find">How to find the yard</a>
+    </div>
+  </div>
+
+  <div class="deck" id="deck" aria-labelledby="deck-title">
+    <h2 id="deck-title" class="vh">The selector, a playable turntable</h2>
+    <div class="plinth">
+      <div class="platter">
+        <div class="record" id="record" tabindex="0" role="slider" aria-label="Record. Drag or use the left and right arrow keys to scratch" aria-valuemin="-4" aria-valuemax="4" aria-valuenow="0" aria-valuetext="Stopped">
+          <div class="grooves" aria-hidden="true"></div>
+          <div class="label" aria-hidden="true">
+            <span class="label-top">Riddim Yard</span>
+            <span class="label-mid">Dub plate special</span>
+            <span class="label-bot">76 bpm one drop</span>
+          </div>
+          <span class="sheen" aria-hidden="true"></span>
+        </div>
+      </div>
+      <svg class="arm" viewBox="0 0 120 260" aria-hidden="true">
+        <circle cx="86" cy="26" r="20" fill="#2A2621"/><circle cx="86" cy="26" r="8" fill="#EFE4C8"/>
+        <path d="M86 26 L92 170 L62 222" fill="none" stroke="#EFE4C8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="44" y="214" width="30" height="20" rx="2" transform="rotate(-30 59 224)" fill="#E5321C"/>
+      </svg>
+      <canvas class="dots" id="dots" width="440" height="60" aria-hidden="true"></canvas>
+      <div class="controls">
+        <button class="ctl ctl-play" id="play" type="button" aria-pressed="false">
+          <svg aria-hidden="true"><use href="#i-play"/></svg><span>Drop the riddim</span>
+        </button>
+        <button class="ctl ctl-horn" id="horn" type="button">
+          <svg aria-hidden="true"><use href="#i-horn"/></svg><span>Air horn</span>
+        </button>
+        <label class="fader">
+          <span class="fader-name">Bass</span>
+          <input id="bass" type="range" min="0" max="100" value="100" aria-label="Bass level. Pull it down to cut the bass">
+        </label>
+      </div>
+    </div>
+    <p class="deck-hint" id="deck-status" aria-live="polite">Drag the record to scratch. Space plays, arrows scratch, H blows the horn.</p>
+  </div>
+
+  <div class="hero-pasteups" aria-hidden="true">
+    <figure class="paste p1 halftone duo-red"><img src="https://images.unsplash.com/photo-1598316560445-1fdee903232e?auto=format&fit=crop&w=600&q=80" alt="" loading="eager"></figure>
+    <figure class="paste p2 halftone duo-blue"><img src="https://images.unsplash.com/photo-1761774805205-1707c369cae9?auto=format&fit=crop&w=700&q=80" alt="" loading="eager"></figure>
+  </div>
+</section>
+
+<!-- MC TICKER -->
+<div class="ticker" aria-label="MC shout outs">
+  <div class="ticker-track">
+    <p>Big up every yard man and yard gyal <svg aria-hidden="true"><use href="#i-star"/></svg> Pull up selector, wheel and come again <svg aria-hidden="true"><use href="#i-star"/></svg> Lighters up for Duppy Gate <svg aria-hidden="true"><use href="#i-star"/></svg> Iron Mango inna di building <svg aria-hidden="true"><use href="#i-star"/></svg> Mind the speaker box, it hot <svg aria-hidden="true"><use href="#i-star"/></svg> Shout to the jerk man pon the corner <svg aria-hidden="true"><use href="#i-star"/></svg> Orange Street never sleep <svg aria-hidden="true"><use href="#i-star"/></svg></p>
+    <p aria-hidden="true">Big up every yard man and yard gyal <svg><use href="#i-star"/></svg> Pull up selector, wheel and come again <svg><use href="#i-star"/></svg> Lighters up for Duppy Gate <svg><use href="#i-star"/></svg> Iron Mango inna di building <svg><use href="#i-star"/></svg> Mind the speaker box, it hot <svg><use href="#i-star"/></svg> Shout to the jerk man pon the corner <svg><use href="#i-star"/></svg> Orange Street never sleep <svg><use href="#i-star"/></svg></p>
+  </div>
+</div>
+
+<!-- INTRO WALL -->
+<section class="wall" aria-labelledby="wall-title">
+  <h2 id="wall-title" class="vh">What Riddim Yard is</h2>
+  <div class="wall-grid">
+    <article class="flyer f-yellow slap">
+      <p class="flyer-big">One street. <span class="stencil">Two sounds.</span> One crowd decide.</p>
+    </article>
+    <article class="flyer f-photo slap" aria-hidden="true">
+      <figure class="halftone duo-yellow"><img src="https://images.unsplash.com/photo-1645536729159-78eccc72f156?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy"></figure>
+      <p class="flyer-tag">Twenty four boxes a side</p>
+    </article>
+    <article class="flyer f-paper slap">
+      <p class="flyer-mid">We started in a car park in 2019 with <span class="spray">one Saturday</span> and two borrowed sets. Now the block fills up by ten.</p>
+    </article>
+    <article class="flyer f-red slap">
+      <p class="flyer-mid">No judges in a suit. The horns blow, the lighters go up and the <span class="stencil stencil-y">meter</span> on the wall tells the truth.</p>
+    </article>
+    <article class="flyer f-blue slap">
+      <p class="flyer-price"><span>Free</span> before ten</p>
+      <p class="flyer-small">J$500 after. Children under twelve with a big person, free all night.</p>
+    </article>
+  </div>
+</section>
+
+<!-- TONIGHT'S CLASH -->
+<section class="clash" id="clash" aria-labelledby="clash-title">
+  <header class="sec-head">
+    <p class="sec-kicker">Saturday 28 November</p>
+    <h2 id="clash-title" class="sign sign-md" data-jitter>Tonight's clash</h2>
+  </header>
+
+  <div class="versus">
+    <article class="sound sound-a">
+      <figure class="stack halftone duo-red"><img src="https://images.unsplash.com/photo-1724858103797-6d388eb1006a?auto=format&fit=crop&w=900&q=80" alt="A tall stack of black speaker boxes, the Iron Mango set" loading="lazy"></figure>
+      <h3 class="sound-name">Iron Mango<br>Hi Power</h3>
+      <p class="sound-from">Out of Waltham Park Road since 1994</p>
+      <dl class="facts">
+        <div><dt>Selectors</dt><dd>Bigga T and Selector Ratty</dd></div>
+        <div><dt>Boxes</dt><dd>24 scoops, 8 mid tops, 4 tweeter horns</dd></div>
+        <div><dt>Style</dt><dd>Heavy roots, slow and mean, plates cut in Brooklyn</dd></div>
+        <div><dt>Record</dt><dd>5 wins at the yard, 2 losses</dd></div>
+      </dl>
+    </article>
+
+    <p class="vs" aria-hidden="true">vs</p>
+
+    <article class="sound sound-b">
+      <figure class="stack halftone duo-blue"><img src="https://images.unsplash.com/photo-1645536729519-134e3b7e9e88?auto=format&fit=crop&w=900&q=80" alt="A group of speaker boxes stacked high, the Duppy Gate set" loading="lazy"></figure>
+      <h3 class="sound-name">Duppy Gate<br>International</h3>
+      <p class="sound-from">Out of Spanish Town, the youngest crew to hold the cup</p>
+      <dl class="facts">
+        <div><dt>Selectors</dt><dd>Nanny Ruff and Lil Spokes</dd></div>
+        <div><dt>Boxes</dt><dd>20 scoops, 10 mid tops, 6 horns</dd></div>
+        <div><dt>Style</dt><dd>Fast juggling, new dancehall, cheeky plates</dd></div>
+        <div><dt>Record</dt><dd>4 wins at the yard, 3 losses</dd></div>
+      </dl>
+    </article>
+  </div>
+
+  <div class="undercard">
+    <p><span class="paint paint-r">Warm up</span> Sister Breeze Disco plays rocksteady and lovers rock from 8pm. She does not clash. She just makes everybody feel nice.</p>
+    <p><span class="paint paint-b">Showcase</span> The Orange Street Shufflers take the road at 9pm. Twelve dancers, one new move every month, and they teach it to the crowd after.</p>
+  </div>
+</section>
+
+<!-- RULES -->
+<section class="rules" id="rules" aria-labelledby="rules-title">
+  <div class="rules-poster">
+    <h2 id="rules-title" class="sign sign-md" data-jitter>Rules of the clash</h2>
+    <p class="rules-sub">Painted on the wall by the gate. Read them before you start a argument.</p>
+    <ol class="rule-list">
+      <li><span class="num" aria-hidden="true">1</span><p><strong>Four rounds.</strong> Warm up, juggling, dub fi dub, then tune fi tune for the finale.</p></li>
+      <li><span class="num" aria-hidden="true">2</span><p><strong>Dub plates only</strong> from round three. If your sound name is not in the song, it does not count.</p></li>
+      <li><span class="num" aria-hidden="true">3</span><p><strong>Ten minutes a round,</strong> fifteen for the finale. Run over and the MC pull the plug. No argument.</p></li>
+      <li><span class="num" aria-hidden="true">4</span><p><strong>The crowd is the judge.</strong> Horns, lighters and the meter on the wall. No paper scores.</p></li>
+      <li><span class="num" aria-hidden="true">5</span><p><strong>No bottles, no fighting.</strong> Bad vibes get walked out the gate and do not come back.</p></li>
+      <li><span class="num" aria-hidden="true">6</span><p><strong>Winner keeps the Yard Cup</strong> for a month and opens the next clash.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- VOTE -->
+<section class="vote" id="vote" aria-labelledby="vote-title">
+  <header class="sec-head sec-head-light">
+    <p class="sec-kicker">The clash meter</p>
+    <h2 id="vote-title" class="sign sign-md sign-paper" data-jitter>Who running it?</h2>
+    <p class="sec-note">Every forward pushes your sound up the meter. Tap as much as you like, the way you would shout in the yard.</p>
+  </header>
+
+  <div class="meter-wall">
+    <div class="meter-side" data-side="a">
+      <div class="meter-rig">
+        <figure class="rig-photo halftone duo-red"><img src="https://images.unsplash.com/photo-1724858103797-6d388eb1006a?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"></figure>
+        <div class="vu" aria-hidden="true"><i class="peak"></i></div>
+      </div>
+      <p class="meter-name">Iron Mango</p>
+      <p class="meter-num"><span class="pct">50</span>%</p>
+      <p class="meter-count"><span class="count">0</span> forwards</p>
+      <button class="fwd fwd-a" type="button" data-vote="a">Forward Iron Mango</button>
+    </div>
+
+    <div class="meter-mid" aria-hidden="true">
+      <p class="vs vs-small">vs</p>
+    </div>
+
+    <div class="meter-side" data-side="b">
+      <div class="meter-rig">
+        <figure class="rig-photo halftone duo-blue"><img src="https://images.unsplash.com/photo-1645536729519-134e3b7e9e88?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"></figure>
+        <div class="vu" aria-hidden="true"><i class="peak"></i></div>
+      </div>
+      <p class="meter-name">Duppy Gate</p>
+      <p class="meter-num"><span class="pct">50</span>%</p>
+      <p class="meter-count"><span class="count">0</span> forwards</p>
+      <button class="fwd fwd-b" type="button" data-vote="b">Forward Duppy Gate</button>
+    </div>
+  </div>
+  <p class="meter-foot" id="meter-status" aria-live="polite">You have not voted yet.</p>
+  <p class="meter-fine">Concept build: the rest of the crowd is simulated, and your own forwards are kept on this device only.</p>
+</section>
+
+<!-- SCHEDULE -->
+<section class="night" id="night" aria-labelledby="night-title">
+  <div class="night-photos" aria-hidden="true">
+    <figure class="paste halftone duo-yellow n1"><img src="https://images.unsplash.com/photo-1645730826845-cd2ddec9984f?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy"></figure>
+    <figure class="paste halftone duo-red n2"><img src="https://images.unsplash.com/photo-1713450605268-5f8ba67f5b55?auto=format&fit=crop&w=600&q=80" alt="" loading="lazy"></figure>
+    <figure class="paste halftone duo-blue n3"><img src="https://images.unsplash.com/photo-1781545662709-f4721464cc0e?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"></figure>
+  </div>
+  <div class="night-board">
+    <header class="sec-head">
+      <p class="sec-kicker">Running order</p>
+      <h2 id="night-title" class="sign sign-md" data-jitter>The night</h2>
+    </header>
+    <ol class="times">
+      <li><time>7pm</time><div><h3>Gate opens</h3><p>Vinyl swap starts at the gate. Jerk drums are already smoking.</p></div></li>
+      <li><time>8pm</time><div><h3>Sister Breeze Disco</h3><p>Rocksteady and lovers rock to warm the road.</p></div></li>
+      <li><time>9pm</time><div><h3>Orange Street Shufflers</h3><p>Dance showcase in the middle of the street, then the class.</p></div></li>
+      <li><time>10pm</time><div><h3>Round one, warm up</h3><p>Each sound plays ten minutes of whatever they like. Coin toss decides who go first.</p></div></li>
+      <li><time>10.45pm</time><div><h3>Round two, juggling</h3><p>Back to back, three tunes each, no rest between.</p></div></li>
+      <li><time>11.30pm</time><div><h3>Round three, dub fi dub</h3><p>Specials only. This is where the money was spent.</p></div></li>
+      <li><time>12.30am</time><div><h3>Finale, tune fi tune</h3><p>One plate each, back and forth, until the crowd picks a side.</p></div></li>
+      <li><time>1.15am</time><div><h3>The meter closes</h3><p>The MC reads the vote and hands over the Yard Cup.</p></div></li>
+      <li><time>1.30am</time><div><h3>Winner's session</h3><p>The winning sound plays till four. Loser carries the boxes.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ARCHIVE -->
+<section class="archive" id="archive" aria-labelledby="archive-title">
+  <header class="sec-head">
+    <p class="sec-kicker">Results board</p>
+    <h2 id="archive-title" class="sign sign-md" data-jitter>Past clashes</h2>
+  </header>
+  <div class="tally" aria-label="Cup count since 2025">
+    <p><span class="tally-n">5</span> Iron Mango</p>
+    <p><span class="tally-n">4</span> Duppy Gate</p>
+    <p><span class="tally-n">2</span> Sister Breeze</p>
+    <p><span class="tally-n">1</span> Rough Pumpkin</p>
+  </div>
+  <ol class="results">
+    <li><time>31 Oct 2026</time><p class="match"><b>Duppy Gate</b> beat Rough Pumpkin</p><p class="score">61 to 39</p><p class="tune">Plate of the night: a lovers tune turned into a warning, in the Duppy Gate name</p></li>
+    <li><time>26 Sep 2026</time><p class="match"><b>Iron Mango</b> beat Duppy Gate</p><p class="score">54 to 46</p><p class="tune">Rain stopped play for twenty minutes. Nobody went home.</p></li>
+    <li><time>29 Aug 2026</time><p class="match"><b>Iron Mango</b> beat Sister Breeze</p><p class="score">52 to 48</p><p class="tune">Closest final round we ever had. Bigga T played the same plate twice and got away with it.</p></li>
+    <li><time>25 Jul 2026</time><p class="match"><b>Duppy Gate</b> beat Iron Mango</p><p class="score">58 to 42</p><p class="tune">Lil Spokes debut. Seventeen years old and he flipped the whole street.</p></li>
+    <li><time>27 Jun 2026</time><p class="match"><b>Sister Breeze</b> beat Rough Pumpkin</p><p class="score">57 to 43</p><p class="tune">The only time a warm up sound got invited to clash, and she won it.</p></li>
+    <li><time>30 May 2026</time><p class="match"><b>Iron Mango</b> beat Duppy Gate</p><p class="score">63 to 37</p><p class="tune">Biggest margin on the meter. Forty two dub plates in one night.</p></li>
+    <li><time>25 Apr 2026</time><p class="match"><b>Rough Pumpkin</b> beat Iron Mango</p><p class="score">51 to 49</p><p class="tune">The upset. Rough Pumpkin still talk about it every month.</p></li>
+  </ol>
+</section>
+
+<!-- VINYL SWAP -->
+<section class="swap" id="swap" aria-labelledby="swap-title">
+  <div class="swap-photos" aria-hidden="true">
+    <figure class="paste halftone duo-blue s1"><img src="https://images.unsplash.com/photo-1785061384417-62d8b3212f98?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"></figure>
+    <figure class="paste halftone duo-red s2"><img src="https://images.unsplash.com/photo-1580656449278-e8381933522c?auto=format&fit=crop&w=700&q=80" alt="" loading="lazy"></figure>
+    <figure class="paste halftone duo-yellow s3"><img src="https://images.unsplash.com/photo-1788791069315-afef614d8354?auto=format&fit=crop&w=800&q=80" alt="" loading="lazy"></figure>
+  </div>
+  <div class="swap-copy">
+    <p class="sec-kicker">At the gate, 7pm till midnight</p>
+    <h2 id="swap-title" class="sign sign-md" data-jitter>Vinyl swap</h2>
+    <p class="swap-big">Bring <span class="stencil">ten</span>, leave with <span class="stencil stencil-r">ten</span>.</p>
+    <ul class="swap-notes">
+      <li class="flyer f-paper slap"><p>Sevens and twelves, any genre. Scratched is fine if it still plays.</p></li>
+      <li class="flyer f-yellow slap"><p>Miss Pearl from Rockers Corner checks every record on her own deck before it go in the crate.</p></li>
+      <li class="flyer f-red slap"><p>No selling at the swap. If you want money, the record shops on the street stay open till ten.</p></li>
+    </ul>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="find" id="find" aria-labelledby="find-title">
+  <header class="sec-head">
+    <p class="sec-kicker">Orange Street, Downtown Kingston</p>
+    <h2 id="find-title" class="sign sign-md" data-jitter>Find the yard</h2>
+  </header>
+  <div class="find-grid">
+    <figure class="map-wrap" id="map-fig">
+      <div id="yard-map" class="map" role="region" aria-label="Map of the Riddim Yard block on Orange Street"></div>
+      <div class="map-fallback">The map needs a connection. The gate is on Orange Street near Beat Street, Downtown Kingston.</div>
+      <figcaption class="map-tools">
+        <button type="button" data-map="view"><svg aria-hidden="true"><use href="#i-layers"/></svg><span>Satellite view</span></button>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=17.9725,-76.7935" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg><span>Directions in Google Maps</span></a>
+      </figcaption>
+    </figure>
+    <div class="legend">
+      <ul class="legend-list">
+        <li><button type="button" class="pt" data-pt="A"><span class="pin-l">A</span><span><b>The gate and vinyl swap</b> Wristbands, crates, the painted rules.</span></button></li>
+        <li><button type="button" class="pt" data-pt="B"><span class="pin-l">B</span><span><b>Iron Mango stack</b> North end of the block, facing south.</span></button></li>
+        <li><button type="button" class="pt" data-pt="C"><span class="pin-l">C</span><span><b>Duppy Gate stack</b> South end, facing north. Stand in the middle if you brave.</span></button></li>
+        <li><button type="button" class="pt" data-pt="D"><span class="pin-l">D</span><span><b>MC stand and the meter</b> Where the vote is read out.</span></button></li>
+        <li><button type="button" class="pt" data-pt="E"><span class="pin-l">E</span><span><b>Food row</b> Jerk pork, fried fish, festival, soup and cold Ting.</span></button></li>
+        <li><button type="button" class="pt" data-pt="F"><span class="pin-l">F</span><span><b>Taxi drop</b> Route taxis and pick ups. Ask for the Orange Street dance.</span></button></li>
+      </ul>
+      <p class="legend-note">Positions are approximate. The block closes to cars from 6pm.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq" aria-labelledby="faq-title">
+  <div class="faq-head">
+    <h2 id="faq-title" class="sign sign-md" data-jitter>Questions</h2>
+    <p class="flyer f-yellow slap faq-flyer">Ask the MC, ask the man at the gate, or read these first. <span class="stencil">Most answers</span> are here.</p>
+  </div>
+  <div class="faq-list">
+    <details>
+      <summary><span class="q-n">1</span>Is it safe to come downtown at night?</summary>
+      <p>The block is closed off with our own stewards at both ends and the police post is two streets away. Come with friends, park at the taxi drop or get dropped off, and you will be fine.</p>
+    </details>
+    <details>
+      <summary><span class="q-n">2</span>How loud is it really?</summary>
+      <p>Loud enough to feel it in your chest. We sell foam earplugs at the gate for a hundred dollars, and the space by the food row is quieter.</p>
+    </details>
+    <details>
+      <summary><span class="q-n">3</span>Can I bring my own sound to clash?</summary>
+      <p>Come to a night, introduce yourself to the MC and bring a mix with at least ten specials in your name. New sounds get a warm up slot first.</p>
+    </details>
+    <details>
+      <summary><span class="q-n">4</span>What if it rain?</summary>
+      <p>The boxes go under tarpaulin and we wait it out. If the forecast is bad all night, we move to the Sunday and post it here by Friday.</p>
+    </details>
+    <details>
+      <summary><span class="q-n">5</span>Do I need cash?</summary>
+      <p>Bring cash for the food row and the gate after ten. Some vendors take bank transfer, but the signal on the street is not always nice.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p class="foot-sign sign" data-jitter>See you inna di yard</p>
+  <div class="foot-row">
+    <p>Riddim Yard. Last Saturday of every month, Orange Street, Kingston, Jamaica.</p>
+    <p><a href="mailto:douglasbyfield@yahoo.com">Concept site designed and built by Douglas Byfield</a></p>
+  </div>
+  <p class="foot-fine">A fictional event. Sounds, selectors and results are made up. Photos from Unsplash. Map data from OpenStreetMap contributors and Esri.</p>
+</footer>
+
+<script src="assets/vendor/leaflet/leaflet.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
